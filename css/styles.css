@@ -1,4 +1,6 @@
-/* Reset básico y tipografía */
+/* === DISEÑO MINIMALISTA ELEGANTE V2 (Más pulido) === */
+
+/* Reset y fuentes */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,49 +8,59 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    /* Fondo con un degradado sutil en vez de gris plano */
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #2c3e50;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    padding: 20px;
+    padding: 30px 20px;
 }
 
 /* Header */
 .main-header {
     text-align: center;
     margin-bottom: 2rem;
-    border: 1px solid #333;
-    padding: 20px;
+    padding: 25px;
     background: #fff;
     width: 100%;
-    max-width: 800px;
+    max-width: 850px;
+    /* Sombra más suave y moderna */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border-radius: 12px;
 }
 
 .main-header h1 {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     font-weight: 700;
-    margin-bottom: 5px;
+    color: #7f8c8d;
+    letter-spacing: 1px;
     text-transform: uppercase;
+    margin-bottom: 5px;
 }
 
 .main-header h2 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 600;
+    color: #34495e;
 }
 
 /* Contenedor Principal */
 .dashboard-container {
     width: 100%;
-    max-width: 800px;
+    max-width: 850px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
 }
 
-/* Inputs */
+/* Inputs y Búsqueda */
 .search-section {
     display: flex;
     justify-content: center;
@@ -56,48 +68,55 @@ body {
 
 .input-group {
     display: flex;
-    gap: 10px;
+    gap: 12px;
     width: 100%;
 }
 
 input[type="text"], input[type="date"] {
     flex-grow: 1;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 14px 18px;
+    border: 2px solid #eee;
+    border-radius: 10px;
     font-size: 1rem;
     outline: none;
-    transition: border-color 0.3s;
+    transition: all 0.3s ease;
+    background: #fdfdfd;
 }
 
 input:focus {
-    border-color: #666;
+    border-color: #3399ff;
+    box-shadow: 0 0 0 3px rgba(51, 153, 255, 0.1);
 }
 
 button {
-    padding: 12px 24px;
-    background-color: #e0e0e0;
-    border: 1px solid #bbb;
-    border-radius: 4px;
+    padding: 14px 28px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 10px;
     cursor: pointer;
     font-weight: 600;
-    transition: background-color 0.2s;
+    font-size: 1rem;
+    transition: transform 0.2s, background-color 0.3s;
 }
 
 button:hover {
-    background-color: #d5d5d5;
+    background-color: #555;
+    transform: translateY(-2px);
 }
 
 /* Área Visual (Canvas y Loading) */
 .visual-container {
-    background: #e6e6e6; /* Gris del wireframe */
-    border: 1px solid #333;
-    min-height: 300px;
+    background: #fff; /* Fondo blanco limpio */
+    border: 1px solid #eee;
+    border-radius: 12px;
+    min-height: 320px;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 25px;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.02);
 }
 
 .chart-wrapper {
@@ -110,32 +129,37 @@ button:hover {
     display: block;
 }
 
-/* Mensajes de Estado */
+/* Mensajes de Estado (Ocultos por defecto) */
 .state-message {
     text-align: center;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     gap: 15px;
+    color: #7f8c8d;
 }
 
+/* Clase utilitaria para ocultar elementos */
 .hidden {
     display: none !important;
 }
 
 .error-text {
-    color: #d9534f;
-    font-weight: bold;
+    color: #e74c3c;
+    font-weight: 600;
+    background: #fdecea;
+    padding: 15px;
+    border-radius: 8px;
 }
 
-/* Spinner */
+/* Spinner mejorado */
 .spinner {
-    border: 4px solid rgba(0, 0, 0, 0.1);
-    width: 40px;
-    height: 40px;
+    border: 4px solid rgba(0, 0, 0, 0.05);
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
-    border-left-color: #333;
-    animation: spin 1s linear infinite;
+    border-left-color: #3399ff; /* Azul moderno */
+    animation: spin 0.8s linear infinite;
 }
 
 @keyframes spin {
@@ -147,26 +171,27 @@ button:hover {
 .legend-footer {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    background: #fff;
-    font-size: 0.9rem;
+    gap: 25px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    font-size: 0.95rem;
+    color: #666;
 }
 
 .legend-item {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
+    font-weight: 500;
 }
 
 .dot {
-    width: 15px;
-    height: 15px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
-    border: 1px solid #333;
     display: inline-block;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.red-dot { background-color: #ff4d4d; }
-.blue-dot { background-color: #3399ff; }
+.red-dot { background-color: #ff6b6b; border: 2px solid white; }
+.blue-dot { background-color: #4facfe; border: 2px solid white; }
